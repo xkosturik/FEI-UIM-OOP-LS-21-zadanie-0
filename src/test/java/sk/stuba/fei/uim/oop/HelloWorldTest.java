@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.junit.Assert.assertEquals;
+
 public class HelloWorldTest {
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -19,7 +21,7 @@ public class HelloWorldTest {
     @Test
     public void helloWorld() {
         Zadanie0.main(new String[0]);
-        assert out.toString().startsWith("Hello world");
+        assertEquals("Hello world", out.toString().trim());
     }
 
     @After
